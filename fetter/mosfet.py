@@ -1,8 +1,9 @@
-from fetter.read import read_csv
-from fetter.fit import linear_fit as fit
+from elec.read import read_csv
+from elec.fit import linear_fit as fit
 import numpy as np
 import matplotlib.pyplot as plt
 from math import sqrt
+
 
 def linRegime(voltage: list, current: list, xval: float):
     n = len(voltage)
@@ -20,6 +21,11 @@ def linRegime(voltage: list, current: list, xval: float):
 
 
 class Mosfet:
+    r"""
+    Class describing a MOSFET device with the relevant output and transfer
+    characteristics given as input files.
+    """
+
     def __init__(self, output_file, transfer_file):
         self.output = self.Output(output_file)
         self.transfer = self.Transfer(transfer_file)
@@ -88,6 +94,10 @@ class Mosfet:
             return a
 
         def hysteresis(self):
+            r"""
+            Characterizes the hysteresis curve by evaluating the difference
+            between the conductivities during forward and backward sweeps.
+            """
             self.condForward = self.slope(self.vForward, self.iForward)
             self.condBackward = self.slope(self.vBackward, self.iBackward)
             return abs(self.condForward - self.condBackward)
@@ -212,6 +222,14 @@ class Mosfet:
             self.isqBackward = self.isqBackward[: uIndex + 1][lIndex:]
 
         def mobility(self, length, width, capacitance):
+            r"""
+            Function to evaluate the mobility of the device given its
+            dimensions.
+            `length`: The total length of the device.
+            `width`: The width of the device.
+            `capacitance`: The capacitance per unit area of the device.
+            All the quantities are expressed in SI units.
+            """
             grad = fit(self.vForward, self.isqForward)[1]
             mu = (2 * length * grad**2) / (width * capacitance)
             return mu
@@ -241,7 +259,7 @@ class Mosfet:
             maximum channel conductivity expected in a correctly functioning ideal
             FET with the claimed carrier mobility \mu and identical other device
             parameters at the same maximum gate voltage.
-            Ref: Nature Materials
+            Ref: Nature Mat. 17(1):2-7, Choi et al.
             """
             grad = fit(self.vForward, self.isqForward)[1]
             idsMax, idsZero = 0, 0
