@@ -23,14 +23,14 @@ Now, we estimate the linear regime of the plot. Visually, we see that linearity 
 
 Here the arguments of `device.transfer.mobility()` are the dimensions of the device i.e. length, width and capacitance per unit area in the order of appearance (in SI units).
 
-# Acknowledgements
+## Acknowledgements
 
 This project would not have been possible without the constant guidance of Dr. Satyaprasad Senanayak ([satyaprasad@niser.ac.in](mailto:satyaprasad@niser.ac.in)).
 
-# Contributions
+## Contributions
 
 I wrote this package as part of my project for the P452 computational physics course at NISER but intend on maintaining it for the foreseeable future. Please feel free to raise an issue in the issue tracker and I'm more than happy to welcome pull requests!
 
-# Author details
+## Author details
 
  - Ashish Panigrahi ([ashish.panigrahi@niser.ac.in](mailto:ashish.panigrahi@niser.ac.in))
