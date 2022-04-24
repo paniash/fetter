@@ -25,7 +25,7 @@ Here the arguments of `device.transfer.mobility()` are the dimensions of the dev
 
 ## Acknowledgements
 
-This project would not have been possible without the constant guidance of Dr. Satyaprasad Senanayak ([satyaprasad@niser.ac.in](mailto:satyaprasad@niser.ac.in)).
+This project would not have been possible without the constant guidance of Dr. Satyaprasad Senanayak, Assistant Professor, Nanodevice & Physics laboratory, NISER ([satyaprasad@niser.ac.in](mailto:satyaprasad@niser.ac.in)).
 
 ## Contributions
 
