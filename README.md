@@ -25,7 +25,7 @@ Here the arguments of `device.transfer.mobility()` are the dimensions of the dev
 
 # Acknowledgements
 
-This project would not have been possible without the constant guidance of Dr. Satyaprasad Senanayak ([mailto:satyaprasad@niser.ac.in](satyaprasad@niser.ac.in)).
+This project would not have been possible without the constant guidance of Dr. Satyaprasad Senanayak ([satyaprasad@niser.ac.in](mailto:satyaprasad@niser.ac.in)).
 
 # Contributions
 
@@ -33,4 +33,4 @@ I wrote this package as part of my project for the P452 computational physics co
 
 # Author details
 
- - Ashish Panigrahi ([ashish.panigrahi@niser.ac.in](something))
+ - Ashish Panigrahi ([ashish.panigrahi@niser.ac.in](mailto:ashish.panigrahi@niser.ac.in))
