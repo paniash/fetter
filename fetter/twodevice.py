@@ -1,5 +1,5 @@
-from elec.read import read_csv
-from elec.fit import linear_fit as fit
+from read import read_csv
+from fit import linear_fit as fit
 import numpy as np
 import matplotlib.pyplot as plt
 
