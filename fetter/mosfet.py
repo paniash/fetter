@@ -1,5 +1,5 @@
-from read import read_csv
-from fit import linear_fit as fit
+from elec.read import read_csv
+from elec.fit import linear_fit as fit
 import numpy as np
 import matplotlib.pyplot as plt
 from math import sqrt
@@ -61,18 +61,18 @@ class Mosfet:
             self.origif = self.iForward
             self.origib = self.iBackward
 
-        def origplot(self, forORback):
+        def origplot(self, direction):
             r"""
             Plots the original dataset present in the file
-            `forORback`: string specifying "forward" or "backward"
+            `direction`: string specifying "forward" or "backward"
             """
-            if forORback == "forward" or forORback == "Forward":
+            if direction == "forward" or direction == "Forward":
                 plt.plot(self.origvf, self.origif)
                 plt.xlabel("$V_{ds}$ (volts)")
                 plt.ylabel("$I_{ds}$ (Amps)")
                 plt.show()
 
-            elif forORback == "backward" or forORback == "backward":
+            elif direction == "backward" or direction == "backward":
                 plt.plot(self.origvb, self.origib)
                 plt.xlabel("$V_{ds}$ (volts)")
                 plt.ylabel("$I_{ds}$ (Amps)")
@@ -110,11 +110,11 @@ class Mosfet:
             self.condForward = self.slope(self.vForward, self.iForward)
             return self.condForward
 
-        def plotter(self, forORback):
+        def plotter(self, direction):
             r"""
-            forORback: user-specified string either "forward" or "backward"
+            direction: user-specified string either "forward" or "backward"
             """
-            if forORback == "forward" or forORback == "Forward":
+            if direction == "forward" or direction == "Forward":
                 a = fit(self.vForward, self.iForward)[0]
                 b = fit(self.vForward, self.iForward)[1]
                 x = np.linspace(self.vForward[0], self.vForward[-1], 1000)
@@ -127,7 +127,7 @@ class Mosfet:
                 plt.title("Output characteristics: Forward sweep")
                 plt.show()
 
-            elif forORback == "backward" or forORback == "Backward":
+            elif direction == "backward" or direction == "Backward":
                 a = fit(self.vBackward, self.iBackward)[0]
                 b = fit(self.vBackward, self.iBackward)[1]
                 x = np.linspace(self.vBackward[0], self.vBackward[-1], 1000)
@@ -234,13 +234,13 @@ class Mosfet:
             mu = (2 * length * grad**2) / (width * capacitance)
             return mu
 
-        def vthreshold(self, forORback):
-            if forORback == "forward" or forORback == "Forward":
+        def vthreshold(self, direction):
+            if direction == "forward" or direction == "Forward":
                 aForward = fit(self.vForward, self.isqForward)[0]
                 bForward = fit(self.vForward, self.isqForward)[1]
                 return -aForward / bForward
 
-            elif forORback == "backward" or forORback == "Backward":
+            elif direction == "backward" or direction == "Backward":
                 aBackward = fit(self.vBackward, self.isqBackward)[0]
                 bBackward = fit(self.vBackward, self.isqBackward)[1]
                 return -aBackward / bBackward
