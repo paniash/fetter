@@ -274,3 +274,12 @@ class Mosfet:
 
             r = ((idsMax - idsZero) / vgsMax) ** 2 / (grad**2)
             return r
+
+        def electrical_performance(self, length, width, capacitance):
+            r"""
+            Calculates the effective mobility which represents the electrical
+            performance of the device.
+            Ref: Nature Mat. 17(1):2-7, Choi et al.
+            """
+            return self.reliability() * self.mobility(length, width,
+                    capacitance)
