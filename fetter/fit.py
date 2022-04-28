@@ -1,6 +1,4 @@
-import numpy as np
-
-def linear_fit(xvals: np.ndarray, yvals: np.ndarray):
+def linear_fit(xvals, yvals):
     """r
     xvals, yvals: data points given as a list (separately) as input
     Return values:
