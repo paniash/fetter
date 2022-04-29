@@ -1,5 +1,5 @@
-from read import read_csv
-from fit import linear_fit as fit
+from fetter.read import read_csv as read
+from fetter.fit import linear_fit as fit
 import numpy as np
 import matplotlib.pyplot as plt
 from math import sqrt
@@ -37,7 +37,7 @@ class Mosfet:
 
         def __init__(self, filename):
             self.filename = filename
-            file = read_csv(self.filename)
+            file = read(self.filename)
             v = [sub[0] for sub in file]
             i = [sub[1] for sub in file]
             voltage = list(map(abs, list(map(float, v))))
@@ -149,7 +149,7 @@ class Mosfet:
         """
 
         def __init__(self, filename):
-            file = read_csv(filename)
+            file = read(filename)
             v = [sub[0] for sub in file]
             i = [sub[1] for sub in file]
 
