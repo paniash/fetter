@@ -82,8 +82,8 @@ class TwoDevice:
 
             return current, voltage
 
-        self.isBackward, self.vsBackward = backCorrection(isBackward, volt)
-        self.idBackward, self.vdBackward = backCorrection(idBackward, volt)
+        self.isBackward, self.vsBackward = backCorrection(isBackward, vBackward)
+        self.idBackward, self.vdBackward = backCorrection(idBackward, vBackward)
 
     def slope(self, voltage, current):
         a = fit(voltage, current)[1]
