@@ -119,12 +119,12 @@ class Mosfet:
                 b = fit(self.vForward, self.iForward)[1]
                 x = np.linspace(self.vForward[0], self.vForward[-1], 1000)
                 y = a + b * x
-                plt.plot(x, y, "g", label="Slope = {} S/m".format(b))
+                plt.plot(x, y, "g", label="Slope = {:0.2e} S/m".format(b))
                 plt.scatter(self.vForward, self.iForward, s=5, label="Experimental")
                 plt.legend()
                 plt.xlabel("$V_{ds}$ (volts)")
                 plt.ylabel("$I_{ds}$ (Amps)")
-                plt.title("Output characteristics: Forward sweep")
+                # plt.title("Output characteristics: Forward sweep")
                 plt.show()
 
             elif direction == "backward" or direction == "Backward":
@@ -132,12 +132,12 @@ class Mosfet:
                 b = fit(self.vBackward, self.iBackward)[1]
                 x = np.linspace(self.vBackward[0], self.vBackward[-1], 1000)
                 y = a + b * x
-                plt.plot(x, y, "g", label="Slope = {} S/m".format(b))
+                plt.plot(x, y, "g", label="Slope = {:0.2e} S/m".format(b))
                 plt.scatter(self.vBackward, self.iBackward, s=5, label="Experimental")
                 plt.legend()
                 plt.xlabel("$V_{ds}$ (volts)")
                 plt.ylabel("$I_{ds}$ (Amps)")
-                plt.title("Output characteristics: Backward sweep")
+                # plt.title("Output characteristics: Backward sweep")
                 plt.show()
 
             else:

@@ -131,7 +131,7 @@ class TwoDevice:
                     x,
                     y,
                     "g",
-                    label="Slope = {} S/m".format(self.conductivity(direction)),
+                    label="Slope = {:0.2e} S/m".format(self.conductivity(direction)),
                 )
                 plt.scatter(self.vForward, self.isForward, s=5, label="Datapoints")
                 plt.xlabel("$I$ (volts)")
@@ -148,7 +148,7 @@ class TwoDevice:
                     x,
                     y,
                     "g",
-                    label="Slope = {} S/m".format(self.conductivity(direction)),
+                    label="Slope = {:0.2e} S/m".format(self.conductivity(direction)),
                 )
                 plt.scatter(self.vsBackward, self.isBackward, s=5, label="Datapoints")
                 plt.xlabel("$V$ (volts)")
@@ -171,7 +171,7 @@ class TwoDevice:
                     x,
                     y,
                     "g",
-                    label="Slope = {} S/m".format(self.conductivity(direction)),
+                    label="Slope = {:0.2e} S/m".format(self.conductivity(direction)),
                 )
                 plt.scatter(self.vForward, self.idForward, s=5, label="Datapoints")
                 plt.xlabel("$V$ (volts)")
@@ -188,7 +188,7 @@ class TwoDevice:
                     x,
                     y,
                     "g",
-                    label="Slope = {} S/m".format(self.conductivity(direction)),
+                    label="Slope = {:0.2e} S/m".format(self.conductivity(direction)),
                 )
                 plt.scatter(self.vdBackward, self.idBackward, s=5, label="Datapoints")
                 plt.xlabel("$V$ (volts)")
