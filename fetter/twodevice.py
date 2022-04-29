@@ -1,5 +1,5 @@
-from read import read_csv
-from fit import linear_fit as fit
+from fetter.read import read_csv as read
+from fetter.fit import linear_fit as fit
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -22,7 +22,7 @@ class TwoDevice:
         ):
             raise NameError("Argument must be either 'source' or 'drain'!")
 
-        file = read_csv(filename)
+        file = read(filename)
         volt = [sub[0] for sub in file]
         id = [sub[1] for sub in file]
         iss = [sub[2] for sub in file]
