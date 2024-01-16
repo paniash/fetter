@@ -33,4 +33,4 @@ I wrote this package as part of my project for the P452 computational physics co
 
 ## Author details
 
- - Ashish Panigrahi ([ashish.panigrahi@niser.ac.in](mailto:ashish.panigrahi@niser.ac.in))
+ - Ashish Panigrahi ([public@ashishpanigrahi.com](mailto:public@ashishpanigrahi.com))
