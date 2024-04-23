@@ -18,7 +18,7 @@ Now, we estimate the linear regime of the plot. Visually, we see that linearity 
 ```python
 >>> device.transfer.getLinear(0.002, 0.004)
 >>> device.transfer.mobility(1e-4, 1e-3, 1e-8)
-0.3856965836888316
+0.386
 ```
 
 Here the arguments of `device.transfer.mobility()` are the dimensions of the device i.e. length, width and capacitance per unit area in the order of appearance (in SI units).
